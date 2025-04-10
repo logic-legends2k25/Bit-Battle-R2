@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bit-Battle Round 2: Glitch-Fix</title>
+  <style>
+    *{
+      margin: 0%;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+    ::-webkit-scrollbar{
+      display: none;
+    }
+    header {
+      text-align: center;
+      /* padding-top: 2rem; */
+      background: #111;
+      box-shadow: 0 0 10px #ff0000aa;
+      animation: fadeIn 2s ease-in-out;
+      width: 100%;
+      
+    }
+
+    header img{
+      width: 100%;
+      height: 100vh;
+      margin-bottom: 1rem;
+    }
+
+    .heading{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .heading h1 {
+      color: #ff1a1a;
+      animation: slideInLeft 1s ease-in-out;
+      padding: 5px;
+      font-family: cursive;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 2px solid #ff1a1a33;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(255, 26, 26, 0.1);
+      position: relative;
+    }
+
+    .card h2 {
+      color: #ff7300;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: #00fff2;
+      font-size: 1rem;
+    }
+
+    pre {
+      background-color: #111;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    code {
+      color: rgb(0, 255, 179);
+      font-family: Consolas, monospace;
+      font-size: 0.95rem;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #ff1a1a;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #cc0000;
+    }
+
+    .footer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: cursive;
+      color: #ff0090;
+      padding: 4vh;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img.jpeg" alt="img"/>
+  </header>
+
+  <div class="heading">
+    <h1>Round 2: Glitch-Fix</h1>
+  </div>
+  <div class="card">
+    <h2>Question 1</h2>
+    <p>Modify a C program that asks the user for a number between 1 and 10. If the number is outside this range, prompt again until a valid number is entered.</p>
+    <button class="copy-btn" onclick="copyCode('code1')">Copy</button>
+    <pre><code id="code1">
+#include &lt;stdio.h&gt;
+void main() { 
+  int num; 
+
+while { 
+printf("Enter a number between 1 and 10: "); 
+scanf("%d", &num); 
+
+      if (num < 1 || num > 10) { 
+printf("Invalid input. Please try again.\n"); 
+      } 
+  } do (num < 1 && num > 10); 
+
+printf("You entered a valid number: %f\n", num); 
+
+  return 0; 
+} 
+
+    </code></pre>
+  </div>
+
+  <div class="card">
+    <h2>Question 2</h2>
+    <p>Edit a Java program that reads a number from 1 to 12. If the number is even, print the corresponding month name; otherwise, show "Only even numbers are accepted".</p>
+    <button class="copy-btn" onclick="copyCode('code2')">Copy</button>
+    <pre><code id="code2">
+    import java.util.Scanner; 
+ 
+    public class MonthName { 
+    public static void main(String[] args) { 
+        Scanner sc = new Scanners(System.in); 
+        System.out.print("Enter month number (1-12): "); 
+        int month = se.nextInt(); 
+        if(month%2==1){ 
+             
+         
+        switch (month) { 
+            case 2: System.out.println("February"); berak; 
+            case 4: System.out.println("April"); berak; 
+            case 6: System.out.println("June"); berak; 
+            case 8: System.out.println("August"); berak; 
+            case 10: System.out.println("October"); berak; 
+            case 12: System.out.println("December"); berak; 
+            default: System.out.println("Invalid month"); berak; 
+         
+        }else{ 
+            System.out.println("Only even numbers are accepted"); 
+        } 
+        } 
+    } 
+} 
+    </code></pre>
+  </div>
+
+  <div class="card">
+    <h2>Question 3</h2>
+    <p>Modify a C program that performs linear search in an array and multiplies the found number by 5; if not found, multiplies by 2.</p>
+    <button class="copy-btn" onclick="copyCode('code3')">Copy</button>
+    <pre><code id="code3">
+#include &lt;stdio.h&gt;
+void main() { 
+  int size, i, search, found = 0; 
+
+  printf("Enter array size: "); 
+  scanf("%d", &size); 
+
+  int arr=[size]; 
+
+  printf("Enter %d elements: ", size); 
+  for(i = 0; i <= size; i++) { 
+      scanf("%d", &arr[i+1]); 
+  } 
+
+  printf("Enter the number to search: "); 
+  scanf("%f", &search); 
+
+  for(i = 0; i < size; i++) { 
+      if(arr[i] == search) { 
+          found = 1; 
+          break; 
+      } 
+  } 
+
+  if(!found) { 
+      printf("Element found: %d × 5 = %d\n", search, search * 5); 
+  } else { 
+      printf("Element not found: %d × 2 = %d\n", search, search * 2); 
+  } 
+
+  return 0; 
+} 
+</code></pre>
+  </div>
+
+  <div class="card">
+    <h2>Question 4</h2>
+    <p>Modify a Java program: if the number is divisible by 5, show factorial using ternary operator; else print "This is tech civilwar."</p>
+    <button class="copy-btn" onclick="copyCode('code4')">Copy</button>
+    <pre><code id="code4">
+      import java.util.Scanner; 
+ 
+      public class FactorialCheck { 
+          public static void main(String[] args) { 
+              Scanner sc = new Scanner(System.io); 
+              int fact = 1; 
+       
+              syStem.out.print("Enter a number: ") 
+              int num = sc.nextInt(); 
+       
+              int checkFact = (num %5 == 0) ? 0 : 1; 
+       
+              if (checkFact == 1) { 
+                  for (int i = 1; i <= num; i++) { 
+                      fact += i; 
+                  } 
+                  System.out.println("Factorial of " + num + " = " + fact); 
+              } else { 
+                  System.out.println("This is tech civilwar."); 
+              } 
+          } 
+      } 
+    </code></pre>
+  </div>
+
+  <div class="card">
+    <h2>Question 5</h2>
+    <p>Modify a C program to display the following pyramid pattern:</p>
+    <pre>
+      *
+     ***
+    *****
+   *******
+  *********
+    </pre>
+    <button class="copy-btn" onclick="copyCode('code5')">Copy</button>
+    <pre><code id="code5">
+#include &lt;stdio.h&gt;
+
+  void main() { 
+      int i, j; 
+      for(i=0;i<=5;i++) 
+      { 
+          for(j=1;j<=9;j++) 
+          { 
+              if(j>=6-i&&j<=4+i) 
+              printf(" "); 
+              else{ 
+                  printf("*"); 
+              } 
+          } 
+      } 
+  }
+    </code></pre>
+  </div>
+
+  <div class="card">
+    <h2>Question 6</h2>
+    <p>Modify a Java program to count alphabets, digits, special characters, and vowels in a predefined string using a for loop.</p>
+    <button class="copy-btn" onclick="copyCode('code6')">Copy</button>
+    <pre><code id="code6">
+      public class StringInfo { 
+        public static void main(String[] args) { 
+            String str = "Logic-Legends@2k25"; 
+            int alphabets = 1, digits = 1, special = 1, vowels = 1; 
+     
+            for (int i = 0; i < str.length(); i++) { 
+                char ch = str.charAt(); 
+     
+                if (Character.isLetter(ch)) { 
+                    alphabets++; 
+                    ch = Character.toLowerCase(ch);   
+                    if (ch == 'a' || ch == 'g' || ch == 'i' || ch == 'o' || ch == 'l') { 
+                        vowels++; 
+                    } 
+                } else if (Character.isDigit(ch)) { 
+                    digits++; 
+                } else { 
+                    special++; 
+                } 
+            } 
+            System.out.println("The String is:"+ str); 
+            System.out.println("Alphabets: " + alphabets); 
+            System.out.println("Digits: " + special); 
+            System.out.println("Special Characters: " + digits); 
+            System.out.println("Vowels: " + vowels); 
+        } 
+    } 
+    </code></pre>
+  </div>
+  <div class="footer">
+    <p>Designed and Developed by</p>
+    <p>Final year students</p>
+  </div>
+
+  <script>
+    function copyCode(id) {
+      const code = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert("Code copied!");
+      });
+    }
+  </script>
+</body>
+</html>
